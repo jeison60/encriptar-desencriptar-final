@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+:root {
+    --color-primario: white;
+    --color-secundario: darkblue;
+    --fuente-cormoran: "cormorant";
+}
+
+body {
+    /* Cambiar la ruta a relativa */
+    background-image: url("assets/fotoo.jpg");
+    background-size: contain;
+}
+
+.paneles {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.panel__izquierdo__completo {
+    font-family: var(--fuente-cormoran);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 45%;
+}
+
+.panel__izquierdo {
+    font-family: var(--fuente-cormoran);
+    font-size: 2rem;
+    font-weight: 400;
+    border: none;
+    width: 95%;
+    height: 35rem;
+    padding: 10px;
+    resize: none;
+    background-color: #F8EDE3;
+    border-radius: 5%;
+    color: var(--color-secundario);
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; /* Espacio entre el textarea y los botones */
+}
+
+#encriptar {
+    background-color: var(--color-secundario);
+    color: var(--color-primario);
+}
+
+#desencriptar {
+    background-color: #D8DFE8;
+    color: var(--color-secundario);
+}
+
+button {
+    cursor: pointer;
+    width: 328px;
+    height: 67px;
+    border-radius: 10px;
+    border-color: #FF0000;
+}
+
+.panel__derecho__completo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 45rem;
+    height: 40rem;
+}
+
+.panel__derecho {
+    font-family: var(--fuente-cormoran); /* Cambia la fuente */
+    font-size: 1.5rem; /* Tamaño de fuente */
+    font-weight: 400; /* Peso de fuente */
+    padding: 10px;
+    resize: none;
+    gap: 0px;
+    width: 100%;
+    height: 100%;
+    /* Cambiar la ruta a relativa */
+    background-image: url("assets/Muñeco.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12.5rem;
+    transition: height 0.3s ease; /* Transición suave para la altura */
+    color: black; /* Cambia el color del texto */
+}
+
+#copiar {
+    margin-top: 1%; /* Espacio entre el textarea y el botón */
+    width: 100%; /* Igualar el ancho del textarea */
+    height: 50px; /* Ajusta la altura del botón*/
+    border-radius: 1rem;
+    background-color: var(--color-secundario);
+    color: var(--color-primario);
+    border: none;
+    cursor: pointer;
+}
+
+p {
+    color: red;
+}
+
+@media (max-width: 1200px) {
+    .paneles {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .panel__izquierdo__completo,
+    .panel__derecho__completo {
+        width: 80%;
+    }
+
+    .panel__izquierdo,
+    .botones button {
+        width: 100%;
+    }
+
+    .panel__derecho {
+        font-size: 1.2rem;
+        background-image: none;
+        font-family: var(--fuente-cormoran); /* Cambia la fuente */
+    }
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .panel__izquierdo {
+        font-size: 1.5rem;
+        height: 25rem;
+    }
+
+    .panel__derecho__completo {
+        height: auto;
+    }
+
+    .panel__derecho {
+        font-size: 1.2rem;
+        background-size: 10rem;
+        font-family: var(--fuente-cormoran); /* Cambia la fuente */
+    }
+
+    .botones {
+        display: flex; /* Convertir el contenedor en un flex container */
+        justify-content: center; /* Centrar horizontalmente los elementos hijos (botones) */
+        align-items: center; /* Alinear verticalmente los elementos hijos (botones) */
+        gap: 10px; /* Espacio entre los botones */
+        width: 100%; /* Asegurar que el contenedor use todo el ancho disponible */
+        margin-top: 10px; /* Añadir un poco de margen superior si es necesario */
+        font-family: var(--fuente-cormoran); /* Cambia la fuente */
+    }
+}
+
+/* Media queries para pantallas extra pequeñas */
+@media (max-width: 480px) {
+    .panel__izquierdo__completo,
+    .panel__derecho__completo {
+        width: 80%;
+    }
+
+    .panel__izquierdo {
+        font-size: 1.2rem;
+        height: 20rem;
+    }
+
+    .botones {
+        width: 100%;
+    }
+
+    #copiar {
+        font-size: 1rem;
+    }
+
+    .panel__derecho {
+        font-family: var(--fuente-cormoran); /* Cambia la fuente */
+    }
+}
